@@ -1,0 +1,182 @@
+#include"changerIO.hpp"
+
+//get the ftp address and the file path and the file name from the input string like "ftp://137.127.0.0/192.168.0.0/2016-07-21/A.jpg"
+void filePathParser(char* inputStr,char* ftpAddr,char* filePath,char* fileName)
+{
+	string str1 = inputStr;
+	int index = str1.find("/");
+	int posStart;
+	int posEnd;
+	int count = 0; 
+	vector<int> posIndex;
+	vector<String>posStr;
+	string tempStr;
+	while(index!=str1.npos)
+	{     
+	   posIndex.push_back(index);	   
+	  // cout<<index<<endl; 
+	   index = str1.find("/",index+1); 
+	}
+	//cout<<"no this symbol"<<endl;
+	for(int i = 0;i<posIndex.size()-1;i++)
+	{
+		posStart = posIndex.at(i);
+		posEnd = posIndex.at(i+1);
+		if((posEnd-posStart)>1)
+		{	
+			//cout<<posStart<<","<<posEnd<<": "<<str1.substr(posStart+1,posEnd-posStart-1)<<endl;
+			count = count + 1;
+			if(count == 1)
+				strcpy(ftpAddr,str1.substr(posStart+1,posEnd-posStart-1).c_str());
+				//ftpAddr = str1.substr(posStart+1,posEnd-posStart-1).c_str();
+			else
+				tempStr = tempStr+"/"+str1.substr(posStart+1,posEnd-posStart-1);
+
+		}		 
+	
+	}
+        
+	//cout<<str1.substr(posEnd+1)<<endl;
+        //fileName = str1.substr(posEnd+1).c_str();
+        //filePath = tempStr.c_str();
+	tempStr = tempStr+"/"+str1.substr(posEnd+1);
+	strcpy(fileName,str1.substr(posEnd+1).c_str());
+	strcpy(filePath ,tempStr.c_str());
+        //cout<<"FTP addr: "<<ftpAddr<<endl;
+	//cout<<"File Path: "<<filePath<<endl;
+	//cout<<"fileName: "<<fileName<<endl;
+
+
+}
+CHANGE_RGN* SceneChangeDetector(char* inputPath1,char* inputPath2,char* outputPath,DETECT_PARAM inputParam1,PRESET_POS_INFO inputParam2)
+{
+       
+	char ftpAddr1[256];
+	char filePath1[256];
+	char fileName1[256];
+	char ftpAddr2[256];
+	char filePath2[256];
+	char fileName2[256];
+	char ftpAddr3[256];
+	char filePath3[256];
+	char fileName3[256];
+    
+	DETECT_PARAM params = {3,7,8,400,0.01};
+	params.nScale = inputParam1.nScale;//检测尺度
+	params.nSzKernel = inputParam1.nSzKernel;//滤波核大小
+	params.nFilters = inputParam1.nFilters;//滤波器个数
+	params.nChangeRnSz = inputParam1.nChangeRnSz;//变化区域最小尺寸
+	params.fSensitivity = inputParam1.fSensitivity;//检测灵敏度，分割阈值
+        
+
+	PRESET_POS_INFO presetPosInfo = {0,0,0,0};
+	//memcpy(&presetPosInfo,(PRESET_POS_INFO&)inputParam2,sizeof(params));
+
+        presetPosInfo.fCarrierAz = inputParam2.fCarrierAz;// 预置位方位角
+        presetPosInfo.fCarrierEl = inputParam2.fCarrierEl;//预置位俯仰角
+        presetPosInfo.fCarrierHt = inputParam2.fCarrierHt;//云台高度
+        presetPosInfo.fFieldViewPP = inputParam2.fFieldViewPP;//预置位视场角
+
+        filePathParser(inputPath1,ftpAddr1,filePath1,fileName1);
+	filePathParser(inputPath2,ftpAddr2,filePath2,fileName2);
+	filePathParser(outputPath,ftpAddr3,filePath3,fileName3);
+        int i;
+	ftp tsend;
+        Mat image_A,image_B;  
+
+	vector<Mat> vector_filterd_image_A;
+	vector<Mat> vector_filterd_image_B;
+
+	char cmd_file[256];
+	int port = 21;
+        int errCode = 1;
+        CHANGE_RGN* rtRgn = NULL;
+         int rtRgnNum = 0;
+         Rect rcTemp;
+	 Mat srcImgA; 
+	 Mat srcImgB;
+	 vector<Rect> output;//save the changed region
+         vector<float> outputCorrelationCf;//save the corresponding correlation coefficient
+
+      
+        strcpy(cmd_file, "get ");
+	strcat(cmd_file, filePath1);
+	strcat(cmd_file, " ");
+	strcat(cmd_file, fileName1);
+	errCode=tsend.ftp_client(ftpAddr1, port, cmd_file);
+	cout<<ftpAddr1<<" "<<cmd_file<<endl;
+	if(errCode!=1)
+	{
+		cout<<errCode<<" login failed "<<endl;
+		return NULL;
+	}
+	memset(cmd_file,0,sizeof(cmd_file));
+        strcpy(cmd_file, "get ");
+	strcat(cmd_file, filePath2);
+	strcat(cmd_file, " ");
+	strcat(cmd_file, fileName2);
+	errCode=tsend.ftp_client(ftpAddr2, port, cmd_file);
+	if(errCode!=1)
+	{
+		cout<<errCode<<" login failed "<<endl;
+
+		return NULL;
+	}
+	//download the images from ftp
+
+       image_A = imread(fileName1, 1); // Read the file  
+       image_B = imread(fileName2,1);
+	 
+        if(! image_A.data ) // Check for invalid input  
+        {  
+            cout << "Could not open or find the image" << std::endl ;  
+            return NULL;  
+        } 
+        if(! image_B.data ) // Check for invalid input  
+        {   
+            cout << "Could not open or find the image" << std::endl ;  
+            return NULL;  
+        } 
+	if(image_B.size!=image_A.size)
+		 return NULL;
+
+
+	 cvtColor(image_A, srcImgA, CV_RGB2GRAY);
+	 cvtColor(image_B, srcImgB, CV_RGB2GRAY);	
+	
+         ChangeDetector(srcImgA,srcImgB, params,output,outputCorrelationCf);//detect the changes
+         rtRgnNum = output.size();
+         rtRgn = new CHANGE_RGN[rtRgnNum];
+	 for(i = 0;i<output.size();i++)
+	 {
+                 rcTemp = output.at(i);
+                 rectangle(image_A,rcTemp,Scalar(255,0,0));//label
+                if(rtRgn!= NULL)
+                { 
+                        rtRgn[i].fAz = presetPosInfo.fCarrierAz+presetPosInfo.fFieldViewPP*(rcTemp.x+rcTemp.width/2-image_A.cols/2);
+                        rtRgn[i].fEl = presetPosInfo.fCarrierEl+presetPosInfo.fFieldViewPP*(rcTemp.y+rcTemp.height/2-image_A.rows/2);
+                        rtRgn[i].fDist = presetPosInfo.fCarrierHt/(0.00001+sin(rtRgn[i].fEl)); 
+                        rtRgn[i].fP = outputCorrelationCf.at(i);
+                }
+         }
+          imwrite(fileName3,image_A);//save the labeled image
+	// imshow("OSD",image_A);
+	// waitKey(0);
+
+//get the final output
+
+//upload the labeled image
+ 	
+	memset(cmd_file,0,sizeof(cmd_file));	
+         strcpy(cmd_file,"put ");
+         strcat(cmd_file,fileName3);
+	strcat(cmd_file, " ");
+	strcat(cmd_file, filePath3);
+	//strcat(cmd_file,fileName3);
+	if(1!=tsend.ftp_client(ftpAddr3, port, cmd_file))
+	{
+		cout<<"Uploading failed!"<<endl;
+		return NULL ;
+	}
+        return rtRgn;
+}

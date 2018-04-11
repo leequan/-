@@ -1,0 +1,13 @@
+
+
+CC=g++
+OBJ =  libchangerIO.so test_changerDll.o changerIO.o changerDll.o ftp_client1.o
+test_changerDll : $(OBJ)
+	$(CC) $(OBJ) -o test_changerDll  `pkg-config --libs opencv` -L . -lchangerIO
+
+clean :
+	@-rm  *.o *.so test_changerDll
+	
+
+
+

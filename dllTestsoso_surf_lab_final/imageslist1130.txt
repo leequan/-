@@ -1,0 +1,29 @@
+ 
+/home/tuxiang/liquan/Pictures/0818/2/A.jpg& /home/tuxiang/liquan/Pictures/0818/2/B.jpg& /home/tuxiang/liquan/Pictures/0818/2/surf_MaxMergeTriangleString_overlap_hsv.jpg 
+
+/home/tuxiang/liquan/Pictures/changcheng/005/0.jpg&  /home/tuxiang/liquan/Pictures/changcheng/005/1.jpg&  /home/tuxiang/liquan/Pictures/changcheng/005/surf_MaxMergeTriangleString_overlap_hsv.jpg
+
+/home/tuxiang/liquan/Pictures/0820/3/A.jpg& /home/tuxiang/liquan/Pictures/0820/3/B.jpg& /home/tuxiang/liquan/Pictures/0820/3/surf_MaxMergeTriangleString_overlap_hsv.jpg 
+
+/home/tuxiang/liquan/Pictures/0820/4/A.jpg& /home/tuxiang/liquan/Pictures/0820/4/B.jpg& /home/tuxiang/liquan/Pictures/0820/4/surf_MaxMergeTriangleString_overlap_hsv.jpg 
+
+/home/tuxiang/liquan/Pictures/0821/1/A.jpg& /home/tuxiang/liquan/Pictures/0821/1/B.jpg& /home/tuxiang/liquan/Pictures/0821/1/surf_MaxMergeTriangleString_overlap_hsv.jpg 
+
+/home/tuxiang/liquan/Pictures/0821/4/A.jpg& /home/tuxiang/liquan/Pictures/0821/4/B.jpg& /home/tuxiang/liquan/Pictures/0821/4/surf_MaxMergeTriangleString_overlap_hsv.jpg 
+
+/home/tuxiang/liquan/Pictures/0822/1/A.jpg& /home/tuxiang/liquan/Pictures/0822/1/B.jpg& /home/tuxiang/liquan/Pictures/0822/1/surf_MaxMergeTriangleString_overlap_hsv.jpg 
+
+/home/tuxiang/liquan/Pictures/0822/2/A.jpg& /home/tuxiang/liquan/Pictures/0822/2/B.jpg& /home/tuxiang/liquan/Pictures/0822/2/surf_MaxMergeTriangleString_overlap_hsv.jpg 
+
+/home/tuxiang/liquan/Pictures/0826/4/A.jpg& /home/tuxiang/liquan/Pictures/0826/4/B.jpg& /home/tuxiang/liquan/Pictures/0826/4/surf_MaxMergeTriangleString_overlap_hsv.jpg 
+
+/home/tuxiang/liquan/Pictures/0909/th0010_01/01/a.jpg&  /home/tuxiang/liquan/Pictures/0909/th0010_01/01/b.jpg&  /home/tuxiang/liquan/Pictures/0909/th0010_01/01/surf_MaxMergeTriangleString_overlap_hsv.jpg
+ 
+/home/tuxiang/liquan/Pictures/0914/1/A.jpg& /home/tuxiang/liquan/Pictures/0914/1/B.jpg& /home/tuxiang/liquan/Pictures/0914/1/surf_MaxMergeTriangleString_overlap_hsv.jpg
+
+/home/tuxiang/liquan/Pictures/0909/th0014_01/01/a.jpg&  /home/tuxiang/liquan/Pictures/0909/th0014_01/01/b.jpg&  /home/tuxiang/liquan/Pictures/0909/th0014_01/01/surf_MaxMergeTriangleString_overlap_hsv_hsv.jpg
+
+/home/tuxiang/liquan/Pictures/0831/02/0.bmp& /home/tuxiang/liquan/Pictures/0831/02/2.bmp& /home/tuxiang/liquan/Pictures/0831/02/surf_MaxMergeTriangleString_overlap_hsv_hsv.bmp 
+
+/home/tuxiang/liquan/Pictures/0909/th0010_01/06/a.jpg&  /home/tuxiang/liquan/Pictures/0909/th0010_01/06/b.jpg&  /home/tuxiang/liquan/Pictures/0909/th0010_01/06/surf_MaxMergeTriangleString_overlap_hsv_hsv.jpg
+

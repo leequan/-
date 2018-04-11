@@ -1,0 +1,10 @@
+/home/tuxiang/liquan/Pictures/0831/01/0.bmp& /home/tuxiang/liquan/Pictures/0831/01/1.bmp& /home/tuxiang/liquan/Pictures/0831/01/Merage_all_10000_5000_much.bmp 
+/home/tuxiang/liquan/Pictures/0831/02/0.bmp& /home/tuxiang/liquan/Pictures/0831/02/2.bmp& /home/tuxiang/liquan/Pictures/0831/02/Merage_all_10000_5000_much.bmp 
+/home/tuxiang/liquan/Pictures/0831/03/0.bmp& /home/tuxiang/liquan/Pictures/0831/03/3.bmp& /home/tuxiang/liquan/Pictures/0831/03/Merage_all_10000_5000_much.bmp 
+/home/tuxiang/liquan/Pictures/0831/04/0.bmp& /home/tuxiang/liquan/Pictures/0831/04/4.bmp& /home/tuxiang/liquan/Pictures/0831/04/Merage_all_10000_5000_much.bmp 
+/home/tuxiang/liquan/Pictures/0831/05/0.bmp& /home/tuxiang/liquan/Pictures/0831/05/5.bmp& /home/tuxiang/liquan/Pictures/0831/05/Merage_all_10000_5000_much.bmp 
+/home/tuxiang/liquan/Pictures/0831/06/0.bmp& /home/tuxiang/liquan/Pictures/0831/06/6.bmp& /home/tuxiang/liquan/Pictures/0831/06/Merage_all_10000_5000_much.bmp 
+/home/tuxiang/liquan/Pictures/0831/07/0.bmp& /home/tuxiang/liquan/Pictures/0831/07/7.bmp& /home/tuxiang/liquan/Pictures/0831/07/Merage_all_10000_5000_much.bmp 
+/home/tuxiang/liquan/Pictures/0831/08/0.bmp& /home/tuxiang/liquan/Pictures/0831/08/8.bmp& /home/tuxiang/liquan/Pictures/0831/08/Merage_all_10000_5000_much.bmp 
+/home/tuxiang/liquan/Pictures/0831/09/0.bmp& /home/tuxiang/liquan/Pictures/0831/09/9.bmp& /home/tuxiang/liquan/Pictures/0831/09/Merage_all_10000_5000_much.bmp 
+/home/tuxiang/liquan/Pictures/0831/10/0.bmp& /home/tuxiang/liquan/Pictures/0831/10/10.bmp& /home/tuxiang/liquan/Pictures/0831/10/Merage_all_10000_5000_much.bmp 

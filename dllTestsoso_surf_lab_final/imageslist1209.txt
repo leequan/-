@@ -1,0 +1,2 @@
+/home/tuxiang/liquan/Pictures/0822/1/A.jpg& /home/tuxiang/liquan/Pictures/0822/1/B.jpg& /home/tuxiang/liquan/Pictures/0822/1/surf_MaxMergeTriangleString_overlap_hsv.jpg 
+

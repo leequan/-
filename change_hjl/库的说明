@@ -1,0 +1,2 @@
+本次生成的库名字仍为libchangerIO.so，接口函数名称还是SceneChangeDetector(img1,img2,img3,thr,thr2,presetPosInfo)，跟去年相比参数有所变化：img1,img2分别表示要对比的两张图片路径；img3表示变化检测后保存的结果图片路径；thr色度阈值（12000-24000），表示对树叶颜色敏感度，越小对绿色越敏感，越容易检测到树动；thr2对变化的敏感度（０-1），越小对变化越不敏感，越不容易检测到变化；presetPosInfo中的四个参数分别表示：预置位方位角、预置位俯仰角、云台高度、预置位市场角。
+另外文件test_changerDll.cpp是对接口函数的使用方法，需要包含头文件changerIO.hpp。

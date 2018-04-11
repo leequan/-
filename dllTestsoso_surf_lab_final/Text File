@@ -1,0 +1,597 @@
+/*
+Mat DrawMaxChanges(Mat image_B,vector<Rect>& output,Rect rcTemp,int maxID,int maxSize，CvPoint origin);
+{
+		rcTemp = output.at(maxID);
+		rcTemp.x = rcTemp.x-origin.x;
+		rcTemp.y = rcTemp.y-origin.y;
+		rcTemp.x = rcTemp.x<0?0:rcTemp.x;
+		rcTemp.y = rcTemp.y<0?0:rcTemp.y;
+                rectangle(image_B,rcTemp,Scalar(0,0,255));//label
+
+		rcTemp.x = (rcTemp.x-1)<0?0:(rcTemp.x-1);
+		rcTemp.y = (rcTemp.y-1)<0?0:(rcTemp.y-1);
+		rcTemp.width = rcTemp.width+2;
+		rcTemp.height = rcTemp.height+2;
+		rectangle(image_B,rcTemp,Scalar(0,0,0));//label
+	      return image_B;
+
+}
+
+*/
+
+/*
+Mat DrawMaxRectangleChanges(Mat image_B,vector<Rect>& output,Rect rcTemp,int maxID,CvPoint origin)
+{
+	rcTemp = output.at(maxID);
+	rcTemp.x = rcTemp.x-origin.x;
+	rcTemp.y = rcTemp.y-origin.y;
+	rcTemp.x = rcTemp.x<0?0:rcTemp.x;
+	rcTemp.y = rcTemp.y<0?0:rcTemp.y;
+        rectangle(image_B,rcTemp,Scalar(0,0,255));//label
+
+	rcTemp.x = (rcTemp.x-1)<0?0:(rcTemp.x-1);
+	rcTemp.y = (rcTemp.y-1)<0?0:(rcTemp.y-1);
+	rcTemp.width = rcTemp.width+2;
+	rcTemp.height = rcTemp.height+2;
+	rectangle(image_B,rcTemp,Scalar(0,0,0));//label
+	
+	CvPoint start31,start32,start33,end31,end32;
+	start31.x = rcTemp.x+cvRound(0.5*rcTemp.width);
+	start31.y = rcTemp.y;
+	    
+	start32.x = rcTemp.x;
+	start32.y = rcTemp.y+rcTemp.height;
+	    
+	 start33.x = rcTemp.x+cvRound(rcTemp.width);
+	 start33.y = rcTemp.y+rcTemp.height;
+	    
+	 line(image_B,start31,start32,Scalar(0,0,255),2);
+	 line(image_B,start31,start33,Scalar(0,0,255),2);
+	 line(image_B,start32,start33,Scalar(0,0,255),2);
+	
+
+
+	rcTemp.x = rcTemp.x+680;
+	rcTemp.y = rcTemp.y-230;
+        rcTemp.width = 3*(rcTemp.width);
+        rcTemp.height = 4*(rcTemp.height);
+
+	int dashlength = 5;
+	int linelength = 5;
+	int totallength = dashlength+linelength;
+	int nCountX = rcTemp.width/totallength;
+	int nCountY = rcTemp.height/totallength;
+		
+	CvPoint start,end;	
+	start.y = rcTemp.y;
+	start.x = rcTemp.x;	
+	end.y = rcTemp.y;
+	end.x = rcTemp.x;
+		
+	for (int i=0;i<nCountX;i++)
+	    {
+	         end.x = rcTemp.x+(i+1)*totallength-dashlength;
+	         end.y = rcTemp.y;
+	         start.x = rcTemp.x+i*totallength;
+		 start.y = rcTemp.y;
+		 line(image_B,start,end,Scalar(0,255,255),2);
+	    }	
+	for (int i=0;i<nCountX;i++)
+	    {
+		  start.x = rcTemp.x+i*totallength;
+		  start.y = rcTemp.y+rcTemp.height;
+		  end.x = rcTemp.x+(i+1)*totallength-dashlength;
+		  end.y = rcTemp.y+rcTemp.height;
+		  line(image_B,start,end,Scalar(0,255,255),2);
+	    }	
+	for (int i=0;i<nCountY;i++)
+	    {
+		  start.x = rcTemp.x;
+		  start.y = rcTemp.y+i*totallength;
+		  end.x = rcTemp.x;
+		  end.y = rcTemp.y+(i+1)*totallength-dashlength;
+		  line(image_B,start,end,Scalar(0,255,255),2);
+	    }	
+	for (int i=0;i<nCountY;i++)
+	    {
+		 start.x = rcTemp.x+rcTemp.width;
+		 start.y = rcTemp.y+i*totallength;
+		 end.x = rcTemp.x+rcTemp.width;
+		 end.y = rcTemp.y+(i+1)*totallength-dashlength;
+		 line(image_B,start,end,Scalar(0,255,255),2);
+	    }
+            start.x = rcTemp.x;
+	    start.y = rcTemp.y;
+	    end.x = rcTemp.x;
+	    end.y = rcTemp.y+3*linelength;
+	    line(image_B,start,end,Scalar(0,0,255),2);
+	    
+	    start.x = rcTemp.x;
+	    start.y = rcTemp.y;
+	    end.x = rcTemp.x+3*linelength;
+	    end.y = rcTemp.y;
+	    line(image_B,start,end,Scalar(0,0,255),2);  //left top
+	       
+	    start.x = rcTemp.x+rcTemp.width;
+	    start.y = rcTemp.y;
+	    end.x = rcTemp.x+rcTemp.width-3*linelength;
+	    end.y = rcTemp.y;
+	    line(image_B,start,end,Scalar(0,0,255),2);
+	    
+	    start.x = rcTemp.x+rcTemp.width;
+	    start.y = rcTemp.y;
+	    end.x = rcTemp.x+rcTemp.width;
+	    end.y = rcTemp.y+3*linelength;
+	    line(image_B,start,end,Scalar(0,0,255),2);  //right top
+			
+	    start.x = rcTemp.x;
+	    start.y = rcTemp.y+rcTemp.height;
+	    end.x = rcTemp.x;
+	    end.y = rcTemp.y+rcTemp.height-3*linelength;
+	    line(image_B,start,end,Scalar(0,0,255),2);
+	    
+	    start.x = rcTemp.x;
+	    start.y = rcTemp.y+rcTemp.height;
+	    end.x = rcTemp.x+3*linelength;
+	    end.y = rcTemp.y+rcTemp.height;
+	    line(image_B,start,end,Scalar(0,0,255),2);  //left bottom
+	    
+	    start.x = rcTemp.x+rcTemp.width;
+	    start.y = rcTemp.y+rcTemp.height;
+	    end.x = rcTemp.x+rcTemp.width;
+	    end.y = rcTemp.y+rcTemp.height-3*linelength;
+	    line(image_B,start,end,Scalar(0,0,255),2);
+	    
+	    start.x = rcTemp.x+rcTemp.width;
+	    start.y = rcTemp.y+rcTemp.height;
+	    end.x = rcTemp.x+rcTemp.width-3*linelength;
+	    end.y = rcTemp.y+rcTemp.height;
+	    line(image_B,start,end,Scalar(0,0,255),2);  //right bottom
+	    
+	    CvPoint start31,start32,start33,end31,end32;
+	     start31.x = 420;
+	     start31.y = 370;
+	    
+	     start32.x = start31.x-130;
+	     start32.y = start31.y+130;
+	    
+	     start33.x = start31.x+130;
+	     start33.y = start31.y+130;
+	    
+	    line(image_B,start31,start32,Scalar(0,0,255),2);
+	    line(image_B,start31,start33,Scalar(0,0,255),2);
+	    line(image_B,start32,start33,Scalar(0,0,255),2);
+	*/    
+	    
+	  
+      
+      std::stringstream ss;
+      std::string str;
+      ss<<fAz;
+      ss>>str;  
+	
+       std::stringstream ss1;
+      std::string str1;
+      ss1<<fEl;
+      ss1>>str1;  
+      */
+      
+     //cout<<str<<endl;
+     // cout<<str1<<endl;
+     /*
+      string strAz="Az:"; //"预置位方位角";
+      string strEl="El:";  //"俯仰角";
+      
+      string str="270.08 ";
+      string str1="-90.12";
+	string text1 = strAz+str;
+	string text2 = strEl+str1;
+	string text = text1+text2;
+	
+	string str31="270.08 ";
+	string str32="-90.12";
+	string text31 = strAz+str31;
+	string text32 = strEl+str32;
+	string text33 = text31+text32;
+*/
+/*	
+	if(rcTemp.x<200&&rcTemp.y<200)
+	{
+	    start.x = rcTemp.x+rcTemp.width;
+	    start.y = rcTemp.y+rcTemp.height;  
+	    end.x = rcTemp.x+rcTemp.width+30;
+	    end.y = rcTemp.y+rcTemp.height+30;
+	    line(image_B,start,end,Scalar(0,0,255));
+	    
+	    start.x = rcTemp.x+rcTemp.width+30+2*rcTemp.width;
+	    start.y = rcTemp.y+rcTemp.height+30;
+	    end.x = rcTemp.x+rcTemp.width+30;
+	    end.y = rcTemp.y+rcTemp.height+30;
+	    line(image_B,start,end,Scalar(0,0,255));
+	    
+	    Point pt(end.x+cvRound(0.5*rcTemp.width),end.y-7);	    //rectangle(image_B,cvPoint(end.x,end.y-30-5),cvPoint(start.x,start.y-5),Scalar(0,0,255));
+	    Scalar color = CV_RGB(0,255,255);
+	    putText(image_B,text,pt,CV_FONT_HERSHEY_DUPLEX,1.0f,color); //right bottom
+	}	
+	
+	if(rcTemp.x<200&&rcTemp.y+rcTemp.height>image_B.rows-200)
+	{
+	    start.x = rcTemp.x+rcTemp.width;
+	    start.y = rcTemp.y;  
+	    end.x = rcTemp.x+rcTemp.width+30;
+	    end.y = rcTemp.y-30;
+	    line(image_B,start,end,Scalar(0,0,255));
+	    
+	    start.x = rcTemp.x+rcTemp.width+30;
+	    start.y = rcTemp.y-30;
+	    end.x = rcTemp.x+rcTemp.width+30+2*rcTemp.width;
+	    end.y = rcTemp.y-30;
+	    line(image_B,start,end,Scalar(0,0,255));
+	    
+	   Point pt(start.x+cvRound(0.5*rcTemp.width),start.y-7);	    //rectangle(image_B,cvPoint(end.x,end.y-30-5),cvPoint(start.x,start.y-5),Scalar(0,0,255));
+	    Scalar color = CV_RGB(0,255,255);
+	    putText(image_B,text,pt,CV_FONT_HERSHEY_DUPLEX,1.0f,color);  //right top
+	}
+	
+	
+	if(rcTemp.x+rcTemp.width>image_B.cols-200&&rcTemp.y+rcTemp.height>image_B.rows-200)
+	{
+	    start.x = rcTemp.x;
+	    start.y = rcTemp.y;  
+	    end.x = rcTemp.x-30;
+	    end.y = rcTemp.y-30;
+	    line(image_B,start,end,Scalar(0,0,255));
+	    
+	    start.x = rcTemp.x-30;
+	    start.y = rcTemp.y-30;
+	    end.x = rcTemp.x-30-2*rcTemp.width;
+	    end.y = rcTemp.y-30;
+	    line(image_B,start,end,Scalar(0,0,255));
+	    
+	   Point pt(end.x+cvRound(0.5*rcTemp.width),end.y-7);	    //rectangle(image_B,cvPoint(end.x,end.y-30-5),cvPoint(start.x,start.y-5),Scalar(0,0,255));
+	    Scalar color = CV_RGB(0,255,255);
+	    putText(image_B,text,pt,CV_FONT_HERSHEY_DUPLEX,1.0f,color);  //left top
+	}
+	
+	
+	if(rcTemp.y<200&&rcTemp.x+rcTemp.width>image_B.cols-200)
+	{
+	    start.x = rcTemp.x;
+	    start.y = rcTemp.y+rcTemp.height;  
+	    end.x = rcTemp.x-30;
+	    end.y = rcTemp.y+rcTemp.height+30;
+	    line(image_B,start,end,Scalar(0,0,255));
+	    
+	    start.x = rcTemp.x-30;
+	    start.y = rcTemp.y+rcTemp.height+30;
+	    end.x = rcTemp.x-30-2*rcTemp.width;
+	    end.y = rcTemp.y+rcTemp.height+30;
+	    line(image_B,start,end,Scalar(0,0,255));
+	    
+	    Point pt(end.x+cvRound(0.5*rcTemp.width),end.y-7);	    //rectangle(image_B,cvPoint(end.x,end.y-30-5),cvPoint(start.x,start.y-5),Scalar(0,0,255));
+	    Scalar color = CV_RGB(0,255,255);
+	    putText(image_B,text,pt,CV_FONT_HERSHEY_DUPLEX,1.0f,color);  //left bottom
+	}
+	
+	
+	else
+	{
+	  
+	    start.x = rcTemp.x+rcTemp.width;
+	    start.y = rcTemp.y+rcTemp.height;  
+	    end.x = rcTemp.x+rcTemp.width+30;
+	    end.y = rcTemp.y+rcTemp.height+30;
+	    line(image_B,start,end,Scalar(0,0,255),2);
+	    
+	    start.x = rcTemp.x+rcTemp.width+30+rcTemp.width+110;
+	    start.y = rcTemp.y+rcTemp.height+30;
+	    end.x = rcTemp.x+rcTemp.width+30;
+	    end.y = rcTemp.y+rcTemp.height+30;
+	    line(image_B,start,end,Scalar(0,0,255),2);
+	    
+	   // Point pt(end.x+cvRound(0.5*rcTemp.width),end.y-7);
+	    Point pt(end.x,end.y-7);	    //rectangle(image_B,cvPoint(end.x,end.y-30-5),cvPoint(start.x,start.y-5),Scalar(0,0,255));
+	    Scalar color = CV_RGB(0,0,255);
+	    putText(image_B,text,pt,CV_FONT_HERSHEY_DUPLEX,1.0f,color,2); //right bottom
+	    
+	    
+	    end31.x = start33.x+30;
+	    end31.y = start33.y+30;
+	    line(image_B,start33,end31,Scalar(0,0,255),2);
+	    
+	    end32.x = end31.x+330;
+	    end32.y = end31.y;
+	    line(image_B,end31,end32,Scalar(0,0,255),2);
+	    
+	    Point pt3(end31.x,end31.y-7);
+	    // Scalar color = CV_RGB(0,0,255);
+	    putText(image_B,text33,pt3,CV_FONT_HERSHEY_DUPLEX,1.0f,color,2); //right bottom
+	    
+	    
+	    
+	    
+	}
+	*/
+	
+	//return image_B;
+//}
+
+/*
+Mat drawchanges(Mat image_B,vector<Rect>& output,Rect rcTemp,int maxID,CvPoint origin,int fAz,int fEl)
+{
+	rcTemp = output.at(maxID);
+	rcTemp.x = rcTemp.x-origin.x;
+	rcTemp.y = rcTemp.y-origin.y;
+	rcTemp.x = rcTemp.x<0?0:rcTemp.x;
+	rcTemp.y = rcTemp.y<0?0:rcTemp.y;
+	
+cout<<"rcTemp.x="<<rcTemp.x<<endl;
+cout<<"rcTemp.y="<<rcTemp.y<<endl;
+cout<<"origin.x="<<origin.x<<endl;
+cout<<"origin.y="<<origin.y<<endl;
+cout<<"rcTemp.width="<<rcTemp.width<<endl;
+cout<<"rcTemp.height="<<rcTemp.height<<endl;
+
+	rcTemp.x = rcTemp.x+680;
+	rcTemp.y = rcTemp.y-230;
+        rcTemp.width = 3*(rcTemp.width);
+        rcTemp.height = 4*(rcTemp.height);
+
+	int dashlength = 5;
+	int linelength = 5;
+	int totallength = dashlength+linelength;
+	int nCountX = rcTemp.width/totallength;
+	int nCountY = rcTemp.height/totallength;
+		
+	CvPoint start,end;	
+	start.y = rcTemp.y;
+	start.x = rcTemp.x;	
+	end.y = rcTemp.y;
+	end.x = rcTemp.x;
+		
+	for (int i=0;i<nCountX;i++)
+	    {
+	         end.x = rcTemp.x+(i+1)*totallength-dashlength;
+	         end.y = rcTemp.y;
+	         start.x = rcTemp.x+i*totallength;
+		 start.y = rcTemp.y;
+		 line(image_B,start,end,Scalar(0,255,255),2);
+	    }	
+	for (int i=0;i<nCountX;i++)
+	    {
+		  start.x = rcTemp.x+i*totallength;
+		  start.y = rcTemp.y+rcTemp.height;
+		  end.x = rcTemp.x+(i+1)*totallength-dashlength;
+		  end.y = rcTemp.y+rcTemp.height;
+		  line(image_B,start,end,Scalar(0,255,255),2);
+	    }	
+	for (int i=0;i<nCountY;i++)
+	    {
+		  start.x = rcTemp.x;
+		  start.y = rcTemp.y+i*totallength;
+		  end.x = rcTemp.x;
+		  end.y = rcTemp.y+(i+1)*totallength-dashlength;
+		  line(image_B,start,end,Scalar(0,255,255),2);
+	    }	
+	for (int i=0;i<nCountY;i++)
+	    {
+		 start.x = rcTemp.x+rcTemp.width;
+		 start.y = rcTemp.y+i*totallength;
+		 end.x = rcTemp.x+rcTemp.width;
+		 end.y = rcTemp.y+(i+1)*totallength-dashlength;
+		 line(image_B,start,end,Scalar(0,255,255),2);
+	    }
+            start.x = rcTemp.x;
+	    start.y = rcTemp.y;
+	    end.x = rcTemp.x;
+	    end.y = rcTemp.y+3*linelength;
+	    line(image_B,start,end,Scalar(0,0,255),2);
+	    
+	    start.x = rcTemp.x;
+	    start.y = rcTemp.y;
+	    end.x = rcTemp.x+3*linelength;
+	    end.y = rcTemp.y;
+	    line(image_B,start,end,Scalar(0,0,255),2);  //left top
+	       
+	    start.x = rcTemp.x+rcTemp.width;
+	    start.y = rcTemp.y;
+	    end.x = rcTemp.x+rcTemp.width-3*linelength;
+	    end.y = rcTemp.y;
+	    line(image_B,start,end,Scalar(0,0,255),2);
+	    
+	    start.x = rcTemp.x+rcTemp.width;
+	    start.y = rcTemp.y;
+	    end.x = rcTemp.x+rcTemp.width;
+	    end.y = rcTemp.y+3*linelength;
+	    line(image_B,start,end,Scalar(0,0,255),2);  //right top
+			
+	    start.x = rcTemp.x;
+	    start.y = rcTemp.y+rcTemp.height;
+	    end.x = rcTemp.x;
+	    end.y = rcTemp.y+rcTemp.height-3*linelength;
+	    line(image_B,start,end,Scalar(0,0,255),2);
+	    
+	    start.x = rcTemp.x;
+	    start.y = rcTemp.y+rcTemp.height;
+	    end.x = rcTemp.x+3*linelength;
+	    end.y = rcTemp.y+rcTemp.height;
+	    line(image_B,start,end,Scalar(0,0,255),2);  //left bottom
+	    
+	    start.x = rcTemp.x+rcTemp.width;
+	    start.y = rcTemp.y+rcTemp.height;
+	    end.x = rcTemp.x+rcTemp.width;
+	    end.y = rcTemp.y+rcTemp.height-3*linelength;
+	    line(image_B,start,end,Scalar(0,0,255),2);
+	    
+	    start.x = rcTemp.x+rcTemp.width;
+	    start.y = rcTemp.y+rcTemp.height;
+	    end.x = rcTemp.x+rcTemp.width-3*linelength;
+	    end.y = rcTemp.y+rcTemp.height;
+	    line(image_B,start,end,Scalar(0,0,255),2);  //right bottom
+	    
+	    CvPoint start31,start32,start33,end31,end32;
+	     start31.x = 420;
+	     start31.y = 370;
+	    
+	     start32.x = start31.x-130;
+	     start32.y = start31.y+130;
+	    
+	     start33.x = start31.x+130;
+	     start33.y = start31.y+130;
+	    
+	    line(image_B,start31,start32,Scalar(0,0,255),2);
+	    line(image_B,start31,start33,Scalar(0,0,255),2);
+	    line(image_B,start32,start33,Scalar(0,0,255),2);
+	    
+	    
+	  
+      
+      std::stringstream ss;
+      std::string str;
+      ss<<fAz;
+      ss>>str;  
+	
+       std::stringstream ss1;
+      std::string str1;
+      ss1<<fEl;
+      ss1>>str1;  
+      
+      
+     //cout<<str<<endl;
+     // cout<<str1<<endl;
+      string strAz="Az:"; //"预置位方位角";
+      string strEl="El:";  //"俯仰角";
+      
+      string str="270.08 ";
+      string str1="-90.12";
+	string text1 = strAz+str;
+	string text2 = strEl+str1;
+	string text = text1+text2;
+	
+	string str31="270.08 ";
+	string str32="-90.12";
+	string text31 = strAz+str31;
+	string text32 = strEl+str32;
+	string text33 = text31+text32;
+	
+	if(rcTemp.x<200&&rcTemp.y<200)
+	{
+	    start.x = rcTemp.x+rcTemp.width;
+	    start.y = rcTemp.y+rcTemp.height;  
+	    end.x = rcTemp.x+rcTemp.width+30;
+	    end.y = rcTemp.y+rcTemp.height+30;
+	    line(image_B,start,end,Scalar(0,0,255));
+	    
+	    start.x = rcTemp.x+rcTemp.width+30+2*rcTemp.width;
+	    start.y = rcTemp.y+rcTemp.height+30;
+	    end.x = rcTemp.x+rcTemp.width+30;
+	    end.y = rcTemp.y+rcTemp.height+30;
+	    line(image_B,start,end,Scalar(0,0,255));
+	    
+	    Point pt(end.x+cvRound(0.5*rcTemp.width),end.y-7);	    //rectangle(image_B,cvPoint(end.x,end.y-30-5),cvPoint(start.x,start.y-5),Scalar(0,0,255));
+	    Scalar color = CV_RGB(0,255,255);
+	    putText(image_B,text,pt,CV_FONT_HERSHEY_DUPLEX,1.0f,color); //right bottom
+	}	
+	
+	if(rcTemp.x<200&&rcTemp.y+rcTemp.height>image_B.rows-200)
+	{
+	    start.x = rcTemp.x+rcTemp.width;
+	    start.y = rcTemp.y;  
+	    end.x = rcTemp.x+rcTemp.width+30;
+	    end.y = rcTemp.y-30;
+	    line(image_B,start,end,Scalar(0,0,255));
+	    
+	    start.x = rcTemp.x+rcTemp.width+30;
+	    start.y = rcTemp.y-30;
+	    end.x = rcTemp.x+rcTemp.width+30+2*rcTemp.width;
+	    end.y = rcTemp.y-30;
+	    line(image_B,start,end,Scalar(0,0,255));
+	    
+	   Point pt(start.x+cvRound(0.5*rcTemp.width),start.y-7);	    //rectangle(image_B,cvPoint(end.x,end.y-30-5),cvPoint(start.x,start.y-5),Scalar(0,0,255));
+	    Scalar color = CV_RGB(0,255,255);
+	    putText(image_B,text,pt,CV_FONT_HERSHEY_DUPLEX,1.0f,color);  //right top
+	}
+	
+	
+	if(rcTemp.x+rcTemp.width>image_B.cols-200&&rcTemp.y+rcTemp.height>image_B.rows-200)
+	{
+	    start.x = rcTemp.x;
+	    start.y = rcTemp.y;  
+	    end.x = rcTemp.x-30;
+	    end.y = rcTemp.y-30;
+	    line(image_B,start,end,Scalar(0,0,255));
+	    
+	    start.x = rcTemp.x-30;
+	    start.y = rcTemp.y-30;
+	    end.x = rcTemp.x-30-2*rcTemp.width;
+	    end.y = rcTemp.y-30;
+	    line(image_B,start,end,Scalar(0,0,255));
+	    
+	   Point pt(end.x+cvRound(0.5*rcTemp.width),end.y-7);	    //rectangle(image_B,cvPoint(end.x,end.y-30-5),cvPoint(start.x,start.y-5),Scalar(0,0,255));
+	    Scalar color = CV_RGB(0,255,255);
+	    putText(image_B,text,pt,CV_FONT_HERSHEY_DUPLEX,1.0f,color);  //left top
+	}
+	
+	
+	if(rcTemp.y<200&&rcTemp.x+rcTemp.width>image_B.cols-200)
+	{
+	    start.x = rcTemp.x;
+	    start.y = rcTemp.y+rcTemp.height;  
+	    end.x = rcTemp.x-30;
+	    end.y = rcTemp.y+rcTemp.height+30;
+	    line(image_B,start,end,Scalar(0,0,255));
+	    
+	    start.x = rcTemp.x-30;
+	    start.y = rcTemp.y+rcTemp.height+30;
+	    end.x = rcTemp.x-30-2*rcTemp.width;
+	    end.y = rcTemp.y+rcTemp.height+30;
+	    line(image_B,start,end,Scalar(0,0,255));
+	    
+	    Point pt(end.x+cvRound(0.5*rcTemp.width),end.y-7);	    //rectangle(image_B,cvPoint(end.x,end.y-30-5),cvPoint(start.x,start.y-5),Scalar(0,0,255));
+	    Scalar color = CV_RGB(0,255,255);
+	    putText(image_B,text,pt,CV_FONT_HERSHEY_DUPLEX,1.0f,color);  //left bottom
+	}
+	
+	
+	else
+	{
+	  
+	    start.x = rcTemp.x+rcTemp.width;
+	    start.y = rcTemp.y+rcTemp.height;  
+	    end.x = rcTemp.x+rcTemp.width+30;
+	    end.y = rcTemp.y+rcTemp.height+30;
+	    line(image_B,start,end,Scalar(0,0,255),2);
+	    
+	    start.x = rcTemp.x+rcTemp.width+30+rcTemp.width+110;
+	    start.y = rcTemp.y+rcTemp.height+30;
+	    end.x = rcTemp.x+rcTemp.width+30;
+	    end.y = rcTemp.y+rcTemp.height+30;
+	    line(image_B,start,end,Scalar(0,0,255),2);
+	    
+	   // Point pt(end.x+cvRound(0.5*rcTemp.width),end.y-7);
+	    Point pt(end.x,end.y-7);	    //rectangle(image_B,cvPoint(end.x,end.y-30-5),cvPoint(start.x,start.y-5),Scalar(0,0,255));
+	    Scalar color = CV_RGB(0,0,255);
+	    putText(image_B,text,pt,CV_FONT_HERSHEY_DUPLEX,1.0f,color,2); //right bottom
+	    
+	    
+	    end31.x = start33.x+30;
+	    end31.y = start33.y+30;
+	    line(image_B,start33,end31,Scalar(0,0,255),2);
+	    
+	    end32.x = end31.x+330;
+	    end32.y = end31.y;
+	    line(image_B,end31,end32,Scalar(0,0,255),2);
+	    
+	    Point pt3(end31.x,end31.y-7);
+	    // Scalar color = CV_RGB(0,0,255);
+	    putText(image_B,text33,pt3,CV_FONT_HERSHEY_DUPLEX,1.0f,color,2); //right bottom
+	    
+	    
+	    
+	    
+	}
+	
+	
+	return image_B;
+  }
+*/ 

@@ -1,0 +1,34 @@
+/home/jalywangtuxiang/QT/picture/change/1/0.jpg& /home/jalywangtuxiang/QT/picture/change/1/1.jpg& /home/jalywangtuxiang/QT/picture/change/1/01.jpg 
+/home/jalywangtuxiang/QT/picture/change/2/0.jpg& /home/jalywangtuxiang/QT/picture/change/2/1.jpg& /home/jalywangtuxiang/QT/picture/change/2/01.jpg 
+/home/tuxiang/liquan/Pictures/0831/03/0.bmp& /home/tuxiang/liquan/Pictures/0831/03/3.bmp& /home/tuxiang/liquan/Pictures/0831/03/Merage_all_10000_5000_much.bmp 
+/home/tuxiang/liquan/Pictures/0831/04/0.bmp& /home/tuxiang/liquan/Pictures/0831/04/4.bmp& /home/tuxiang/liquan/Pictures/0831/04/Merage_all_10000_5000_much.bmp 
+/home/tuxiang/liquan/Pictures/0831/05/0.bmp& /home/tuxiang/liquan/Pictures/0831/05/5.bmp& /home/tuxiang/liquan/Pictures/0831/05/Merage_all_10000_5000_much.bmp 
+/home/tuxiang/liquan/Pictures/0831/06/0.bmp& /home/tuxiang/liquan/Pictures/0831/06/6.bmp& /home/tuxiang/liquan/Pictures/0831/06/Merage_all_10000_5000_much.bmp 
+/home/tuxiang/liquan/Pictures/0831/07/0.bmp& /home/tuxiang/liquan/Pictures/0831/07/7.bmp& /home/tuxiang/liquan/Pictures/0831/07/Merage_all_10000_5000_much.bmp 
+/home/tuxiang/liquan/Pictures/0831/08/0.bmp& /home/tuxiang/liquan/Pictures/0831/08/8.bmp& /home/tuxiang/liquan/Pictures/0831/08/Merage_all_10000_5000_much.bmp 
+/home/tuxiang/liquan/Pictures/0831/09/0.bmp& /home/tuxiang/liquan/Pictures/0831/09/9.bmp& /home/tuxiang/liquan/Pictures/0831/09/Merage_all_10000_5000_much.bmp 
+/home/tuxiang/liquan/Pictures/0831/10/0.bmp& /home/tuxiang/liquan/Pictures/0831/10/10.bmp& /home/tuxiang/liquan/Pictures/0831/10/Merage_all_10000_5000_much.bmp 
+
+
+
+
+
+
+/home/jalywangtuxiang/QT/picture/change/1/0.jpg& 
+/home/jalywangtuxiang/QT/picture/change/1/1.jpg& 
+/home/jalywangtuxiang/QT/picture/change/1/01.jpg 
+
+/home/jalywangtuxiang/QT/picture/change/2/0.jpg& 
+/home/jalywangtuxiang/QT/picture/change/2/1.jpg& 
+/home/jalywangtuxiang/QT/picture/change/2/01.jpg 
+
+/home/jalywangtuxiang/QT/picture/change/3/0.jpg&  /home/jalywangtuxiang/QT/picture/change/3/1.jpg&  /home/jalywangtuxiang/QT/picture/change/3/01.jpg
+/home/jalywangtuxiang/QT/picture/change/4/0.jpg&  /home/jalywangtuxiang/QT/picture/change/4/1.jpg&  /home/jalywangtuxiang/QT/picture/change/4/01.jpg
+/home/jalywangtuxiang/QT/picture/change/5/0.jpg&  /home/jalywangtuxiang/QT/picture/change/5/1.jpg&  /home/jalywangtuxiang/QT/picture/change/5/01.jpg
+/home/jalywangtuxiang/QT/picture/change/6/0.jpg&  /home/jalywangtuxiang/QT/picture/change/6/1.jpg&  /home/jalywangtuxiang/QT/picture/change/6/01.jpg	
+/home/jalywangtuxiang/QT/picture/change/7/0.jpg&  /home/jalywangtuxiang/QT/picture/change/7/1.jpg&  /home/jalywangtuxiang/QT/picture/change/7/01.jpg 
+
+
+
+
+

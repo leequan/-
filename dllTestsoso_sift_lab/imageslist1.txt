@@ -1,0 +1,4 @@
+/home/tuxiang/liquan/Pictures/0821/1/A.jpg& /home/tuxiang/liquan/Pictures/0821/1/B.jpg& /home/tuxiang/liquan/Pictures/0821/1/ABB.jpg
+/home/tuxiang/liquan/Pictures/0914/1/A.jpg& /home/tuxiang/liquan/Pictures/0914/1/B.jpg& /home/tuxiang/liquan/Pictures/0914/1/AB_surf_lab.jpg
+/home/tuxiang/liquan/Pictures/0818/2/A.jpg& /home/tuxiang/liquan/Pictures/0818/2/B.jpg& /home/tuxiang/liquan/Pictures/0818/2/ABB.jpg 
+/home/tuxiang/liquan/Pictures/0818/1/A.jpg& /home/tuxiang/liquan/Pictures/0818/1/B.jpg& /home/tuxiang/liquan/Pictures/0818/1/ABB.jpg 

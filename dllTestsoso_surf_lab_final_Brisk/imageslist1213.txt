@@ -1,0 +1,90 @@
+ 
+/home/tuxiang/lnn/Pictures/1/1.jpg& /home/tuxiang/lnn/Pictures/1/2.jpg& /home/tuxiang/lnn/Pictures/1/change_Brisk.jpg 
+
+/home/tuxiang/lnn/Pictures/2/2.jpg& /home/tuxiang/lnn/Pictures/2/9.jpg& /home/tuxiang/lnn/Pictures/2/change_Brisk.jpg 
+
+/home/tuxiang/lnn/Pictures/3/3.jpg& /home/tuxiang/lnn/Pictures/3/5.jpg& /home/tuxiang/lnn/Pictures/3/change_Brisk.jpg
+
+/home/tuxiang/lnn/Pictures/4/6.jpg& /home/tuxiang/lnn/Pictures/4/7.jpg& /home/tuxiang/lnn/Pictures/4/change_Brisk.jpg 
+
+/home/tuxiang/lnn/Pictures/5/12.jpg& /home/tuxiang/lnn/Pictures/5/44.jpg& /home/tuxiang/lnn/Pictures/5/change_Brisk12_44.jpg 
+
+/home/tuxiang/lnn/Pictures/5/12.jpg& /home/tuxiang/lnn/Pictures/5/71.jpg& /home/tuxiang/lnn/Pictures/5/change_Brisk12_71.jpg 
+
+/home/tuxiang/lnn/Pictures/6/13.jpg& /home/tuxiang/lnn/Pictures/6/19.jpg& /home/tuxiang/lnn/Pictures/6/change_Brisk.jpg 
+
+/home/tuxiang/lnn/Pictures/7/15.jpg& /home/tuxiang/lnn/Pictures/7/79.jpg& /home/tuxiang/lnn/Pictures/7/change_Brisk.jpg 
+
+/home/tuxiang/lnn/Pictures/8/20.jpg& /home/tuxiang/lnn/Pictures/8/46.jpg& /home/tuxiang/lnn/Pictures/8/change_Brisk.jpg 
+
+/home/tuxiang/lnn/Pictures/9/25.jpg& /home/tuxiang/lnn/Pictures/9/26.jpg& /home/tuxiang/lnn/Pictures/9/change_Brisk.jpg 
+
+/home/tuxiang/lnn/Pictures/10/33.jpg& /home/tuxiang/lnn/Pictures/10/34.jpg& /home/tuxiang/lnn/Pictures/10/change_Brisk.jpg 
+
+/home/tuxiang/lnn/Pictures/11/38.jpg& /home/tuxiang/lnn/Pictures/11/41.jpg& /home/tuxiang/lnn/Pictures/11/change_Brisk.jpg 
+
+/home/tuxiang/lnn/Pictures/12/43.jpg& /home/tuxiang/lnn/Pictures/12/45.jpg& /home/tuxiang/lnn/Pictures/12/change_Brisk.jpg 
+
+/home/tuxiang/lnn/Pictures/13/48.jpg& /home/tuxiang/lnn/Pictures/13/112.jpg& /home/tuxiang/lnn/Pictures/13/change_Brisk.jpg 
+
+/home/tuxiang/lnn/Pictures/10/33.jpg& /home/tuxiang/lnn/Pictures/10/34.jpg& /home/tuxiang/lnn/Pictures/10/change_Brisk.jpg 
+
+/home/tuxiang/lnn/Pictures/14/49.jpg& /home/tuxiang/lnn/Pictures/14/80.jpg& /home/tuxiang/lnn/Pictures/14/change_Brisk.jpg 
+
+/home/tuxiang/lnn/Pictures/15/42.jpg& /home/tuxiang/lnn/Pictures/15/106.jpg& /home/tuxiang/lnn/Pictures/15/change_Brisk.jpg 
+
+/home/tuxiang/lnn/Pictures/16/31.jpg& /home/tuxiang/lnn/Pictures/16/32.jpg& /home/tuxiang/lnn/Pictures/16/change_Brisk31_32.jpg
+
+/home/tuxiang/lnn/Pictures/16/61.jpg& /home/tuxiang/lnn/Pictures/16/93.jpg& /home/tuxiang/lnn/Pictures/16/change_Brisk61_93.jpg 
+
+/home/tuxiang/lnn/Pictures/17/28.jpg& /home/tuxiang/lnn/Pictures/17/64.jpg& /home/tuxiang/lnn/Pictures/17/change_Brisk.jpg 
+
+/home/tuxiang/lnn/Pictures/18/75.jpg& /home/tuxiang/lnn/Pictures/18/135.jpg& /home/tuxiang/lnn/Pictures/18/change_Brisk.jpg 
+
+/home/tuxiang/lnn/Pictures/19/248.jpg& /home/tuxiang/lnn/Pictures/19/290.jpg& /home/tuxiang/lnn/Pictures/19/change_Brisk.jpg 
+
+/home/tuxiang/lnn/Pictures/20/151.jpg& /home/tuxiang/lnn/Pictures/20/1049.jpg& /home/tuxiang/lnn/Pictures/20/change_Brisk.jpg 
+
+/home/tuxiang/lnn/Pictures/21/359.jpg& /home/tuxiang/lnn/Pictures/21/386.jpg& /home/tuxiang/lnn/Pictures/21/change_Brisk.jpg 
+
+/home/tuxiang/lnn/Pictures/22/424.jpg& /home/tuxiang/lnn/Pictures/22/455.jpg& /home/tuxiang/lnn/Pictures/22/change_Brisk.jpg 
+
+/home/tuxiang/lnn/Pictures/23/414.jpg& /home/tuxiang/lnn/Pictures/23/441.jpg& /home/tuxiang/lnn/Pictures/23/change_Brisk.jpg 
+
+/home/tuxiang/lnn/Pictures/24/372.jpg& /home/tuxiang/lnn/Pictures/24/402.jpg& /home/tuxiang/lnn/Pictures/24/change_Brisk.jpg 
+
+/home/tuxiang/lnn/Pictures/25/462.jpg& /home/tuxiang/lnn/Pictures/25/492.jpg& /home/tuxiang/lnn/Pictures/25/change_Brisk.jpg 
+
+/home/tuxiang/lnn/Pictures/26/333.jpg& /home/tuxiang/lnn/Pictures/26/495.jpg& /home/tuxiang/lnn/Pictures/26/change_Brisk_333_495.jpg 
+
+/home/tuxiang/lnn/Pictures/26/2439.jpg& /home/tuxiang/lnn/Pictures/26/2449.jpg& /home/tuxiang/lnn/Pictures/26/change_Brisk_2439_2449.jpg 
+
+/home/tuxiang/lnn/Pictures/26/2439.jpg& /home/tuxiang/lnn/Pictures/26/2475.jpg& /home/tuxiang/lnn/Pictures/26/change_Brisk_2439_2475.jpg 
+
+/home/tuxiang/lnn/Pictures/26/2439.jpg& /home/tuxiang/lnn/Pictures/26/2533.jpg& /home/tuxiang/lnn/Pictures/26/change_Brisk_2439_2533.jpg
+
+/home/tuxiang/lnn/Pictures/26/2439.jpg& /home/tuxiang/lnn/Pictures/26/2565.jpg& /home/tuxiang/lnn/Pictures/26/change_Brisk_2439_2565.jpg 
+
+/home/tuxiang/lnn/Pictures/26/2439.jpg& /home/tuxiang/lnn/Pictures/26/2822.jpg& /home/tuxiang/lnn/Pictures/26/change_Brisk_2439_2822.jpg
+
+/home/tuxiang/lnn/Pictures/26/2439.jpg& /home/tuxiang/lnn/Pictures/26/2866.jpg& /home/tuxiang/lnn/Pictures/26/change_Brisk_2439_2866.jpg
+
+/home/tuxiang/lnn/Pictures/26/2439.jpg& /home/tuxiang/lnn/Pictures/26/2867.jpg& /home/tuxiang/lnn/Pictures/26/change_Brisk_2439_2867.jpg 
+
+/home/tuxiang/lnn/Pictures/26/2439.jpg& /home/tuxiang/lnn/Pictures/26/3085.jpg& /home/tuxiang/lnn/Pictures/26/change_Brisk_2439_3085.jpg 
+
+/home/tuxiang/lnn/Pictures/26/2439.jpg& /home/tuxiang/lnn/Pictures/26/3436.jpg& /home/tuxiang/lnn/Pictures/26/change_Brisk_2439_3436.jpg
+
+/home/tuxiang/lnn/Pictures/26/2439.jpg& /home/tuxiang/lnn/Pictures/26/3680.jpg& /home/tuxiang/lnn/Pictures/26/change_Brisk_2439_3680.jpg 
+
+/home/tuxiang/lnn/Pictures/26/2439.jpg& /home/tuxiang/lnn/Pictures/26/8658.jpg& /home/tuxiang/lnn/Pictures/26/change_Brisk_2439_8658.jpg 
+
+/home/tuxiang/lnn/Pictures/26/2439.jpg& /home/tuxiang/lnn/Pictures/26/8690.jpg& /home/tuxiang/lnn/Pictures/26/change_Brisk_2439_8690.jpg 
+
+/home/tuxiang/lnn/Pictures/27/10670.jpg& /home/tuxiang/lnn/Pictures/27/10697.jpg& /home/tuxiang/lnn/Pictures/27/change_Brisk_10670_10697.jpg 
+
+/home/tuxiang/lnn/Pictures/27/11048.jpg& /home/tuxiang/lnn/Pictures/27/11129.jpg& /home/tuxiang/lnn/Pictures/27/change_Brisk_11048_11129.jpg
+
+
+
+

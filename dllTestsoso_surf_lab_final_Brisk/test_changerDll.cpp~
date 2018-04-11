@@ -1,0 +1,44 @@
+#include "changerIO.hpp"
+int main( int argc, char** argv )  
+{    
+  
+	DETECT_PARAM params = {3,7,8,400,0.01};
+	PRESET_POS_INFO presetPosInfo = {0,0,0,0};
+    
+        CHANGE_RGN* rtRgn = NULL;
+     
+        if(argc < 4)
+        {
+		cout<<"no enough input"<<std::endl;
+		return -1;
+        }
+   
+/*
+        cout<<"请输入检测参数:"<<endl;
+
+	cout<<"检测尺度(3):"<<endl;
+	cin>>params.nScale;
+	cout<<"滤波核大小(7):"<<endl;
+	cin>>params.nSzKernel;
+	cout<<"滤波器个数(8):"<<endl;
+	cin>>params.nFilters;
+	cout<<"变化区域最小面积(400):"<<endl;
+	cin>>params.nChangeRnSz;
+	cout<<"检测灵敏度(0.01):"<<endl;
+	cin>>params.fSensitivity;
+
+        cout<<"请输入预置位参数:"<<endl;
+	cout<<"预置位方位角:"<<endl;
+        cin>>presetPosInfo.fCarrierAz;
+	cout<<"预置位俯仰角:"<<endl;
+        cin>>presetPosInfo.fCarrierEl;
+	cout<<"云台高度:"<<endl;
+        cin>>presetPosInfo.fCarrierHt;
+	cout<<"预置位视场角:"<<endl;
+        cin>>presetPosInfo.fFieldViewPP;*/
+
+       rtRgn = SceneChangeDetector(argv[1],argv[2],argv[3],params,presetPosInfo);
+	if(rtRgn!=NULL)
+	delete []rtRgn;
+        return 0;  
+}  
